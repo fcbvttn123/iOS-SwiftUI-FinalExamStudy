@@ -1,0 +1,17 @@
++ New table 
+
++ Set table name and number of columns 
+
++ Set column names and type
+
++ Save
+
++ Set primary key and auto-increment for ID column
+
+    + Under ID column -> More 
+
+    + Click Primary for Primary Key
+
+    + Click Unique for Auto Incrementing
+
+    + Go into ID column -> Check AI checkbox
