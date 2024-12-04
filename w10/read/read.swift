@@ -4,7 +4,6 @@ import MapKit
 struct A3View: View {
     /// Variables for DB
     @ObservedObject var fetch = GetDestinations()
-    /// Variables for Map
     @State var region : MKCoordinateRegion?
     @State private var home: CLLocationCoordinate2D?
     @State var annotationArray = [
@@ -16,10 +15,8 @@ struct A3View: View {
     @State var isLocationValid = false
     @StateObject var locationManager = LocationManager()
     @State var routeSteps : [RouteSteps] = [RouteSteps(step: "Place Holder")]
-    /// Variables for Picker
     @State var pickerViewValue = 0
     @State var filter: [String] = []
-    /// Screen Design
     var body: some View {
         ZStack {
             Image("images")
@@ -81,14 +78,13 @@ struct A3View: View {
             }
         }
     }
-    /// Functions
     func handlePickerChange(value: Int) {
         switch pickerViewValue {
-            case 0: // Stop 1
+            case 0:
                 filter = fetch.destinations.map {$0.Stop1}
-            case 1: // Stop 2
+            case 1:
                 filter = fetch.destinations.map {$0.Stop2}
-            case 2: // Final
+            case 2:
                 filter = fetch.destinations.map {$0.Final}
             default:
                 filter = []

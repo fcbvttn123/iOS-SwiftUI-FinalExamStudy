@@ -1,3 +1,16 @@
+Button(action: {
+    handleSubmit(name: name, age: age) {success, message in
+        print("Data Submitted")
+    }
+}) {
+    Text("Submit")
+        .frame(maxWidth: .infinity)
+        .padding()
+        .background(Color.blue)
+        .foregroundColor(.white)
+        .cornerRadius(8)
+}
+
 func addDestination(stop1: String, stop2: String, final: String, completion: @escaping (Bool, String) -> Void) {
     guard let url = URL(string: "https://vutran.dev.fast.sheridanc.on.ca/iOSClassA3/addDestination.php") else {
         completion(false, "Invalid URL")
